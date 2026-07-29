@@ -4,6 +4,10 @@ A static sales site and fictional sample for a narrow Canadian MD school-list au
 
 **Offer:** a cited, profile-specific screen of 12 Canadian medical schools for Ontario applicants. Founding pilot price: CAD $79.
 
+- **Live:** https://mongol-jimmi.github.io/medcompass-audit/
+- **Free guide:** https://mongol-jimmi.github.io/medcompass-audit/guides/gpa-formulas.html
+- **Contact:** medcompass.audit@atomicmail.io
+
 ## Why this exists
 
 Canadian schools calculate GPA, use MCAT scores, and define residency pools differently. The audit turns one applicant profile into a ranked planning screen with explicit caveats and official source links. It is a decision aid—not an admission prediction or essay service.
