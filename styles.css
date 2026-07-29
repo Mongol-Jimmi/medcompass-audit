@@ -57,6 +57,11 @@ h1 em { color: var(--green-2); }
 .proof-strip strong { color: var(--green); font: 700 25px Georgia, "Times New Roman", serif; }
 .proof-strip span { color: var(--muted); font-size: 12px; }
 
+.guide-callout { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 42px; grid-template-columns: 1.2fr 1fr auto; margin: auto; max-width: 1200px; padding: 54px 24px; }
+.guide-callout .eyebrow { margin-bottom: 8px; }
+.guide-callout h2 { font-size: 34px; line-height: 1.1; margin: 0; }
+.guide-callout p { color: var(--muted); margin: 0; }
+.guide-callout .text-link { white-space: nowrap; }
 .section { margin: 0 auto; max-width: 1200px; padding: 110px 24px; }
 .section h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.05; margin: 0 0 24px; }
 .section-intro { color: var(--muted); font-size: 18px; max-width: 470px; }
@@ -113,7 +118,8 @@ footer>p { margin: 0; text-align: right; }
   .report-preview { margin: 0 12px 24px 0; }
   .proof-strip { grid-template-columns: 1fr 1fr; }
   .proof-strip div:nth-child(3) { border-left: 1px solid #ddd3bb; }
-  .split, .dark, .founder, .pricing-grid, .faq { gap: 45px; grid-template-columns: 1fr; }
+  .guide-callout, .split, .dark, .founder, .pricing-grid, .faq { gap: 28px; grid-template-columns: 1fr; }
+  .guide-callout .text-link { white-space: normal; }
   .steps { grid-template-columns: 1fr; }
   footer { grid-template-columns: 1fr; }
   footer>p { text-align: left; }

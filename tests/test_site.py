@@ -5,7 +5,13 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-HTML_FILES = [ROOT / "index.html", ROOT / "sample.html", ROOT / "privacy.html", ROOT / "terms.html"]
+HTML_FILES = [
+    ROOT / "index.html",
+    ROOT / "sample.html",
+    ROOT / "privacy.html",
+    ROOT / "terms.html",
+    ROOT / "guides" / "gpa-formulas.html",
+]
 
 
 class LinkParser(HTMLParser):
@@ -68,7 +74,7 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(offer["offers"]["price"], "79")
 
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
-        for page in ("sample.html", "privacy.html", "terms.html"):
+        for page in ("sample.html", "privacy.html", "terms.html", "guides/gpa-formulas.html"):
             self.assertIn(page, sitemap)
 
 
