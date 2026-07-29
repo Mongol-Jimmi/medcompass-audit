@@ -72,6 +72,10 @@ h1 em { color: var(--green-2); }
 .limits p { border-top: 1px solid rgba(255,255,255,.18); color: #c8d6d1; font-size: 14px; margin: 0; padding: 18px 10px 20px 0; }
 .limits strong { color: white; display: block; margin-bottom: 5px; }
 
+.founder { border-bottom: 1px solid var(--line); display: grid; gap: 90px; grid-template-columns: .9fr 1.1fr; }
+.founder-copy { border-left: 3px solid var(--gold); padding-left: 30px; }
+.founder-copy p { color: var(--muted); font-size: 17px; margin: 0 0 18px; }
+.founder-copy strong { color: var(--ink); }
 .pricing-grid { align-items: start; display: grid; gap: 90px; grid-template-columns: 1fr .85fr; }
 .pricing-grid>div:first-child>h2 { color: var(--green); font-size: 78px; margin-bottom: 5px; }
 .price-note { border-bottom: 1px solid var(--line); color: var(--muted); padding-bottom: 26px; }
@@ -109,7 +113,7 @@ footer>p { margin: 0; text-align: right; }
   .report-preview { margin: 0 12px 24px 0; }
   .proof-strip { grid-template-columns: 1fr 1fr; }
   .proof-strip div:nth-child(3) { border-left: 1px solid #ddd3bb; }
-  .split, .dark, .pricing-grid, .faq { gap: 45px; grid-template-columns: 1fr; }
+  .split, .dark, .founder, .pricing-grid, .faq { gap: 45px; grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
   footer { grid-template-columns: 1fr; }
   footer>p { text-align: left; }

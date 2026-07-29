@@ -45,6 +45,8 @@ class SiteTests(unittest.TestCase):
         self.assertIn("CAD $79", homepage)
         self.assertIn("48-hour", homepage)
         self.assertIn("Not an admissions prediction", homepage)
+        self.assertIn("65 official admissions sources", homepage)
+        self.assertIn("I have not served on an admissions committee", homepage)
         self.assertIn("privacy.html", homepage)
         self.assertIn("terms.html", homepage)
 
