@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mongol-jimmi.github.io/medcompass-audit/sitemap.xml

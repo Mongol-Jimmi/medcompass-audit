@@ -1,5 +1,7 @@
 from html.parser import HTMLParser
 from pathlib import Path
+import json
+import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,6 +55,19 @@ class SiteTests(unittest.TestCase):
         self.assertNotIn("googletagmanager", content)
         self.assertNotIn("facebook.com/tr", content)
         self.assertNotIn("<form", content)
+
+    def test_structured_offer_and_sitemap_are_valid(self):
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        match = re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', homepage, re.S)
+        self.assertIsNotNone(match)
+        offer = json.loads(match.group(1))
+        self.assertEqual(offer["@type"], "Service")
+        self.assertEqual(offer["offers"]["priceCurrency"], "CAD")
+        self.assertEqual(offer["offers"]["price"], "79")
+
+        sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        for page in ("sample.html", "privacy.html", "terms.html"):
+            self.assertIn(page, sitemap)
 
 
 if __name__ == "__main__":
