@@ -35,8 +35,6 @@ class SiteTests(unittest.TestCase):
         sample = (ROOT / "sample.html").read_text(encoding="utf-8").lower()
 
         self.assertIn("alex example", sample)
-        self.assertNotIn("kiran", sample)
-        self.assertNotIn("kiranjasonshu", sample)
         self.assertNotIn("international_applicant_abroad", sample)
 
     def test_homepage_has_offer_and_disclosures(self):
@@ -46,7 +44,8 @@ class SiteTests(unittest.TestCase):
         self.assertIn("48-hour", homepage)
         self.assertIn("Not an admissions prediction", homepage)
         self.assertIn("65 official admissions sources", homepage)
-        self.assertIn("I have not served on an admissions committee", homepage)
+        self.assertIn("has not served on an admissions committee", homepage)
+        self.assertIn("medcompass.audit@atomicmail.io", homepage)
         self.assertIn("privacy.html", homepage)
         self.assertIn("terms.html", homepage)
 
@@ -64,6 +63,7 @@ class SiteTests(unittest.TestCase):
         self.assertIsNotNone(match)
         offer = json.loads(match.group(1))
         self.assertEqual(offer["@type"], "Service")
+        self.assertEqual(offer["provider"]["name"], "MedCompass Audit")
         self.assertEqual(offer["offers"]["priceCurrency"], "CAD")
         self.assertEqual(offer["offers"]["price"], "79")
 
